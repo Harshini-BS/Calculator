@@ -117,6 +117,10 @@ body {
   font-size: 22px;
 }
 
+.result.long {
+  font-size: 26px;
+}
+
 .keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

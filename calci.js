@@ -19,9 +19,11 @@
   }
 
   function render() {
-    resultEl.classList.remove('error');
-    resultEl.textContent = current === 'Error' ? 'Error' : formatNumber(parseFloat(current));
+    resultEl.classList.remove('error', 'long');
+    const displayValue = current === 'Error' ? 'Error' : formatNumber(parseFloat(current));
+    resultEl.textContent = displayValue;
     if (current === 'Error') resultEl.classList.add('error');
+    if (displayValue.length > 9) resultEl.classList.add('long');
 
     if (operator && previous !== null) {
       expressionEl.textContent = `${formatNumber(previous)} ${operator}`;
